@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naruto Songs</title>
+    <link rel="icon" href="images/naruto 2.png">
+   
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+*{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Poppins",sans-serif;
+
+}
+
+*::before, *::after{
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+.a{
+
+    justify-content: left;
+
+    
+
+    text-align: left;
+
+}
+
+:root{
+
+    --pink:#ff74a4;
+
+    --violet:#9f6ea3;
+
+    --lightblack:#515C6F;
+
+    --white:#ffffff;
+
+    --darkwhite:#cecaca;
+
+    --pinkshadow:#ffcbdd;
+
+    --lightbshadow:rgba(0,0,0,0.15);
+
+}
+
+body{
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+
+
+}
+
+.wrapper{
+
+    width: 380px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 15px;
+
+    padding: 25px 30px;
+
+    background:var(--white);
+
+    box-shadow: 0px 6px 12px var(--lightbshadow);
+
+}
+
+.wrapper i{
+
+    cursor: pointer;
+
+}
+
+.top-bar, .progress-area .timer, 
+
+.controls, .music-list .header, .music-list li{
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+}
+
+.top-bar i{
+
+    font-size: 30px;
+
+    color:var(--lightblack);
+
+}
+
+.top-bar span{
+
+    font-size: 18px;
+
+    color:var(--lightblack);
+
+}
+
+.img-area{
+
+    height: 256px;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    box-shadow:0px 6px 12px var(--lightbshadow);;
+
+}
+
+.img-area img{
+
+    height: 100%;
+
+    width: 100%;
+
+    object-fit: cover;
+
+}
+
+.song-details{
+
+    text-align: center;
+
+    margin: 10px 0;
+
+    margin: 30px 0;
+
+    color:var(--lightblack);
+
+}
+
+.song-details .name{
+
+    font-size: 21px;
+
+}
+
+.song-details .artist{
+
+    opacity: 0.9;
+
+    font-size: 18px;
+
+}
+
+.progress-area{
+
+    height: 6px;
+
+    width: 100%;
+
+    background: #f0f0f0;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+}
+
+.progress-area .progress-bar{
+
+    height: inherit;
+
+    width: 0%;
+
+    position: relative;
+
+    border-radius: inherit;
+
+    background: linear-gradient(90deg, var(--pink) 0%,var(--violet) 100%) ;
+
+}
+
+.progress-bar::before{
+
+    content: "";
+
+    position: absolute;
+
+    height: 12px;
+
+    width: 12px;
+
+    background: #000;
+
+    border-radius: inherit;
+
+    top: 50%;
+
+    right: -5px;
+
+    transform: translateY(-50%);
+
+    background: inherit;
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+
+}
+
+.progress-area:hover .progress-bar::before{
+
+    opacity: 1;  
+
+}
+
+.progress-area .timer{
+
+    margin-top: 2px;
+
+}
+
+.timer span{
+
+    font-size: 13px;
+
+    color: var(--lightblack);
+
+}
+
+.controls{
+
+    margin: 40px 0  5px 0;
+
+}
+
+.controls i{
+
+    font-size: 28px;
+
+    user-select: none;
+
+    background: linear-gradient(var(--pink) 0%,var(--violet) 100%);
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+.controls i:nth-child(2),
+
+.controls i:nth-child(4){
+
+    font-size: 43px;
+
+}
+
+.controls #prev{
+
+    margin-right: -13px;
+
+}
+
+.controls #next{
+
+    margin-left: -13px;
+
+}
+
+.controls .play-pause{
+
+    height: 54px;
+
+    width: 54px;
+
+    background: linear-gradient(var(--white) 0%,var(--darkwhite) 100%);
+
+    box-shadow: 0px 0px 5px var(--pink);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.play-pause::before{
+
+    content: " ";
+
+    position: absolute;
+
+    height: 43px;
+
+    width: 43px;
+
+    border-radius: inherit;
+
+    background: linear-gradient(var(--pink) 0%,var(--violet) 100%);
+
+
+
+}
+
+.play-pause i{ 
+
+    height: 43px;
+
+    width: 43px;
+
+    line-height: 43px;
+
+    text-align: center;
+
+    border-radius: inherit;
+
+    background-clip: text;
+
+    background: inherit;
+
+    position: relative;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+.music-list{
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -55%;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    width: 100%;
+
+    padding: 15px 30px;
+
+    border-radius: 15px;
+
+    background: var(--white);
+
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+
+    transition: all 0.14s ease-out;
+
+}
+
+.music-list.show{
+
+    bottom: 0;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+.music-list .header .row{
+
+    display: flex;
+
+    align-items: center;
+
+    font-size: 19px;
+
+    color: var(--lightblack);
+
+}
+
+.header .row i{
+
+    cursor: default;
+
+}
+
+.header .row span{
+
+    margin-left: 5px;
+
+
+
+}
+
+.header #close{
+
+    font-size: 22px;
+
+    color: var(--lightblack);
+
+}
+
+.music-list ul{
+
+    margin: 10px 0;
+
+    max-height: 260px;
+
+    overflow-y: auto;
+
+}
+
+.music-list ul::-webkit-scrollbar{
+
+    width: 0px;
+
+
+
+}
+
+
+
+.music-list ul li{
+
+    cursor: pointer;
+
+    list-style: none;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 5px;  
+
+    color: var(--lightblack);
+
+    border-bottom: 1px solid #e5e5e5;
+
+}
+
+.music-list ul li:last-child{
+
+    border-bottom: 0px;
+
+}
+
+.music-list ul li .row span{
+
+    font-size: 17px;
+
+}
+
+ul li .row p{
+
+    opacity: 0.9;
+
+}
+
+ul li .audio_duration{
+
+    font-size: 16px;
+
+
+
+}
+
+.music-list ul li:hover{
+
+    color:#0e9fff;
+
+}
+
+ul .playing{
+
+    color:var(--violet);
+
+    pointer-events: none;
+
+}
+
+</style>
+
+<body>
+
+    <div class="wrapper">
+    
+
+        <div class="top-bar">
+
+            <i class="material-symbols-outlined">arrow_back</i>
+
+            <span>Now Playing</span>
+
+            <i class="material-symbols-outlined">more_horiz</i>
+
+        </div>
+
+        <div class="img-area">
+
+            <img src=" " alt="">
+
+        </div>
+
+        <div class="song-details">
+
+            <p class="name"></p>
+
+            <p class="artist"></p>
+
+        </div>
+
+        <div class="progress-area">
+
+            <div class="progress-bar"></div>
+
+            <div class="timer">
+
+                <span class="current">0:00</span>
+
+                <span class="duration"></span>
+
+            </div>
+
+            <audio id="main-audio" src=""></audio>
+
+        </div>
+
+        <div class="controls">
+
+            <i id="repeat-plist" class="material-symbols-outlined" title="playlist looped">repeat</i>
+
+            <i id="prev" class="material-symbols-outlined">skip_previous</i>
+
+           <div class="play-pause">
+
+            <i  class="material-symbols-outlined">play_arrow</i>
+
+           </div>
+
+             <i id="next" class="material-symbols-outlined">skip_next</i>    
+
+             <i id="more-music" class="material-symbols-outlined">queue_music</i>
+
+
+
+        </div>
+
+        <div class="music-list">
+
+            <div class="header">
+
+                <div class="row">
+
+                    <i  class="material-symbols-outlined">queue_music</i>
+
+                    <span>Music list</span>
+
+                </div>
+
+                <i id="close" class="material-symbols-outlined">close</i>    
+
+            </div>
+
+       
+
+        <ul>
+
+           
+
+        </ul>
+
+    </div>
+
+    <script>
+    
+    let allMusic=[
+
+{
+
+    name:"Naruto - Theme",
+
+    artist:"Masashi Kishimoto",
+
+    img:"narutouzu",
+
+    src:"narutoTheme"
+
+},
+
+{
+
+    name:"Naruto - Blue Bird",
+
+    artist:"Masashi Kishimoto",
+
+    img:"blubird",
+
+    src:"blue bird"
+
+},
+
+{
+
+    name:"Itachi Uchiha",
+
+    artist:"Masashi Kishimoto",
+
+    img:"itachi",
+
+    src:"itachisad"
+
+},
+
+{
+
+    name:"Itachi - Sasuke...!",
+
+    artist:"Masashi Kishimoto",
+
+    img:"itachi-sasuke",
+
+    src:"itachi_sasuke"
+
+},
+
+{
+
+    name:"Akatshuki Theme",
+
+    artist:"Masashi Kishimoto",
+
+    img:"akatshuki",
+
+    src:"akatsuki"
+
+},
+
+{
+
+    name:"Akatshuki Group",
+
+    artist:"Masashi Kishimoto",
+
+    img:"akatshukiGroup",
+
+    src:"akatshukigroup"
+
+},
+
+{
+
+    name:"Akatshuki Name",
+
+    artist:"Masashi Kishimoto",
+
+    img:"team akatshuki",
+
+    src:"akatshukiName"
+
+    
+
+},
+
+{
+
+    name:"Pain Theme",
+
+    artist:"Masashi Kishimoto",
+
+    img:"pain-3",
+
+    src:"paintheme"
+
+},
+
+{
+
+    name:"Sasuke NANDOMO",
+
+    artist:"Masashi Kishimoto",
+
+    img:"sasuke",
+
+    src:"NANDOMO"
+
+},
+
+{
+
+    name:"Madara",
+
+    artist:"Masashi Kishimoto",
+
+    img:"madara",
+
+    src:"genjutsu"
+
+},
+
+{
+
+    name:"Wake up to Reality - MADARA",
+
+    artist:"Masashi Kishimoto",
+
+    img:"images (57)",
+
+    src:"madara"
+
+}
+
+
+
+];
+    
+    
+    
+    </script>
+    <script>
+    const wrapper = document.querySelector(".wrapper"),
+
+    musicImg =wrapper.querySelector(".img-area img"),
+
+    musicName = wrapper.querySelector(".song-details .name"),
+
+    musicArtist = wrapper.querySelector(".song-details .artist"),
+
+    mainAudio = wrapper.querySelector("#main-audio"),
+
+    playPauseBtn = wrapper.querySelector(".play-pause"),
+
+    prevBtn = wrapper.querySelector("#prev"),
+
+    nextBtn = wrapper.querySelector("#next"),
+
+    progressArea = wrapper.querySelector(".progress-area"),
+
+   progressBar = wrapper.querySelector(".progress-bar"),
+
+   musicList = wrapper.querySelector(".music-list"),
+
+   showMoreBtn =  wrapper.querySelector("#more-music"),
+
+   hideMusicBtn = musicList.querySelector("#close");
+
+ 
+
+    
+
+   
+
+   
+
+
+
+   let musicIndex =1;
+
+
+
+    window.addEventListener("load",()=>{
+
+        loadMusic( musicIndex);
+
+        playingNow();
+
+    })
+
+
+
+    function loadMusic(indexNumb){
+
+        musicName.innerText = allMusic[indexNumb -1].name;
+
+        musicArtist.innerText = allMusic[indexNumb -1].artist;
+
+        musicImg.src =`images/${allMusic[indexNumb -1].img}.jpg`; 
+
+        mainAudio.src =`songs/${allMusic[indexNumb -1].src}.mp3`; 
+
+
+
+    }
+
+    function playMusic(){
+
+        wrapper.classList.add("paused");
+
+       playPauseBtn.querySelector("i").innerText = "pause"; 
+
+        mainAudio.play();
+
+    }
+
+    
+
+
+
+function pauseMusic(){
+
+    wrapper.classList.remove("paused");
+
+    playPauseBtn.querySelector("i").innerText = "play_arrow"; 
+
+    mainAudio.pause();
+
+}
+
+
+
+
+
+function nextMusic(){
+
+    musicIndex++;
+
+    musicIndex > allMusic.length ? musicIndex =1 :musicIndex = musicIndex;
+
+    loadMusic( musicIndex);
+
+    playMusic();
+
+}
+
+function prevMusic(){
+
+    musicIndex--;
+
+    musicIndex < 1 ? musicIndex =allMusic.length :musicIndex = musicIndex;
+
+    loadMusic( musicIndex);
+
+    playMusic();
+
+}
+
+ playPauseBtn.addEventListener("click" ,() =>{
+
+    const isMusicpaused = wrapper.classList.contains("paused");
+
+    isMusicpaused ? pauseMusic() : playMusic();
+
+ });
+
+ 
+
+ nextBtn.addEventListener("click" ,() =>{
+
+    nextMusic();
+
+ });
+
+
+
+ prevBtn.addEventListener("click" ,() =>{
+
+    prevMusic();
+
+ });
+
+
+
+ mainAudio.addEventListener("timeupdate", (e) =>{
+
+    const currentTime = e.target.currentTime;
+
+    const duration = e.target.duration;
+
+    let progressWidth =(currentTime / duration) * 100;
+
+    progressBar.style.width =`${progressWidth}%`;
+
+    
+
+    let musicCurrentTime = wrapper.querySelector(".current"),
+
+    musicDuration = wrapper.querySelector(".duration");
+
+    mainAudio.addEventListener("loadeddata", ()=>{
+
+        
+
+        
+
+
+
+         let audioDuration = mainAudio.duration;
+
+         let totalMin = Math.floor(audioDuration / 60);
+
+         let totalSec = Math.floor(audioDuration % 60);
+
+         if(totalSec < 10){
+
+            totalSec =`0${totalSec}`;
+
+         }
+
+         musicDuration.innerText = `${totalMin}:${totalSec}`;
+
+    
+
+        });
+
+
+
+         let currentMin = Math.floor(currentTime / 60);
+
+         let currentSec = Math.floor(currentTime % 60);
+
+         if(currentSec < 10){
+
+            currentSec =`0${currentSec}`;
+
+         }
+
+         musicCurrentTime.innerText = `${currentMin}:${currentSec}`
+
+       
+
+});
+
+
+
+progressArea.addEventListener("click", (e) =>{
+
+    let progressWidthval = progressArea.clientWidth;
+
+    let clickedOffSetX = e.offsetX;
+
+    let songDuration = mainAudio.duration;
+
+
+
+    mainAudio.currentTime = (clickedOffSetX / progressWidthval) * songDuration;
+
+    playMusic();
+
+});
+
+
+
+const repeatBtn =wrapper.querySelector("#repeat-plist");
+
+repeatBtn.addEventListener("click", () =>{
+
+    let getText = repeatBtn.innerText;
+
+    switch(getText){
+
+        case "repeat":
+
+        repeatBtn.innerText = "repeat_one";
+
+        repeatBtn.setAttribute("title","song looped");
+
+        break;
+
+        case "repeat_one":
+
+            repeatBtn.innerText="shuffle"
+
+            repeatBtn.setAttribute("title","Playback shuffle");
+
+            break;
+
+            case "shuffle":
+
+            repeatBtn.innerText="repeat"
+
+            repeatBtn.setAttribute("title","Playlist looped");
+
+            break;
+
+    }
+
+});
+
+
+
+mainAudio.addEventListener("ended", () =>{
+
+    let getText = repeatBtn.innerText;
+
+    switch(getText){
+
+        case "repeat":
+
+            nextMusic();
+
+        break;
+
+        case "repeat_one":
+
+          mainAudio.currentTime =0;
+
+          loadMusic(musicIndex);
+
+          playMusic();
+
+            break;
+
+            case "shuffle":
+
+            let randIndex = Math.floor((Math.random() * allMusic.length) + 1);
+
+            do{
+
+                randIndex = Math.floor((Math.random() * allMusic.length) + 1);
+
+            }while(musicIndex == randIndex);
+
+            musicIndex = randIndex;
+
+            loadMusic(musicIndex);
+
+            playMusic();
+
+            break;
+
+    }
+
+});
+
+
+
+showMoreBtn.addEventListener("click", () =>{
+
+    musicList.classList.toggle("show");
+
+   });
+
+   hideMusicBtn.addEventListener("click", () =>{
+
+    showMoreBtn.click();
+
+   });
+
+
+
+   const ulTag = wrapper.querySelector("ul");
+
+   for (let i = 0; i< allMusic.length; i++ ){
+
+    let liTag =` <li li-index="${i + 1}">
+
+    <div class="row">
+
+        <span>${allMusic[i].name}</span>
+
+        <p>${allMusic[i].artist}</p>
+
+    </div>
+
+    <audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
+
+    <span id=id="${allMusic[i].src}" class="audio_duration"></span>
+
+</li>`;
+
+ulTag.insertAdjacentHTML("beforeend", liTag);
+
+
+
+   }
+
+//  play perticular song on clisk
+
+const allLiTags =ulTag.querySelectorAll("li");
+
+function playingNow(){
+
+    for (let j = 0; j<allLiTags.length; j++){
+
+        let audioTag =allLiTags[j].querySelector(".audio-duration");
+
+    if(allLiTags[j].classList.contains("playing")){
+
+        allLiTags[j].classList.remove("playing");
+
+        audioTag.innerText=" ";
+
+    }       
+
+        if(allLiTags[j].getAttribute("li-index") == musicIndex){
+
+            allLiTags[j].classList.add("playing");
+
+          
+
+
+
+        }
+
+        allLiTags[j].setAttribute("onclick","clicked(this)");
+
+    }
+
+}
+
+function clicked(element){
+
+    let getLiIndex = element.getAttribute("li-index");
+
+    musicIndex = getLiIndex;
+
+    loadMusic(musicIndex);
+
+    playMusic();
+
+    playingNow();
+
+}
+    
+    </script>
+
+   
+
+</body>
+</html>
